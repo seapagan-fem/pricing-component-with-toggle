@@ -6,6 +6,14 @@
   font-weight: normal;
 }
 
+.price {
+  display: none;
+}
+
+.active {
+  display: inline;
+}
+
 /* ------------------------------- attribution ------------------------------ */
 .attribution {
   font-size: 11px;
