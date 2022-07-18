@@ -3,25 +3,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-weight: normal;
+  font-weight: 700;
 }
 
 :root {
   /* font */
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
+  font-weight: 700;
 
   /* primary color */
-  --linear-gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+  --linear-gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
 
   /* Neutral colours */
 
-  --very-light-grayish-blue: #f6f6fe;
-  --light-grayish-blue: #b3b5c6;
-  --grayish-blue: #6d708d;
-  --dark-grayish-blue: #494c5f;
+  --very-light-grayish-blue: hsl(240, 80%, 98%);
+  --light-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(234, 13%, 49%);
+  --dark-grayish-blue: hsl(232, 13%, 33%);
 }
 
+/* ----------------------------- style the body ----------------------------- */
 body {
   background-color: var(--very-light-grayish-blue);
   padding: 64px 24px;
@@ -29,28 +31,74 @@ body {
   background-repeat: no-repeat;
 }
 
+/* -------------- style our checkbox as a custom toggle switch -------------- */
+.toggle-wrapper {
+  display: flex;
+  column-gap: 24px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.toggle-wrapper span {
+  color: var(--grayish-blue);
+  opacity: 0.5;
+}
+
+#toggle {
+  appearance: none;
+  position: relative;
+  background: linear-gradient(135deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  margin: 0;
+
+  width: 56px;
+  height: 32px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+#toggle::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 300ms ease-in-out;
+}
+
+#toggle:checked::before {
+  transform: translateX(-100%);
+}
+
+/* ------------- style the main element, this wraps the 3 cards ------------- */
 main {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 32px;
 }
 
+/* ------------------------- style the default card ------------------------- */
 .card {
   background-color: white;
   /* padding: 30px; */
   border-radius: 10px;
   text-align: center;
+  box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5);
+}
+
+.card:nth-of-type(2) {
+  background: linear-gradient(135deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: white;
 }
 
 h1 {
   font-size: 32px;
   text-align: center;
   margin-bottom: 40px;
-}
-
-.toggle {
-  margin-bottom: 80px;
-  text-align: center;
+  color: var(--grayish-blue);
 }
 
 .package-type {
@@ -78,9 +126,18 @@ h1 {
 }
 
 .learn-more {
-  /* background-color: var(--linear-gradient); */
-  /* width: 100%; */
-  /* margin: 0 29px; */
+  background: linear-gradient(135deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: white;
+  margin: 32px 29px;
+  padding: 14px 82px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.card:nth-of-type(2) .learn-more {
+  background-color: white;
 }
 
 /* ------------------------------- attribution ------------------------------ */
