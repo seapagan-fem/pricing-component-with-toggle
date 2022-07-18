@@ -28,6 +28,8 @@
 body {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   row-gap: 16px;
   background-color: var(--very-light-grayish-blue);
   padding: 64px 24px;
@@ -74,7 +76,7 @@ body {
   height: 24px;
   background-color: #fff;
   border-radius: 50%;
-  transition: transform 300ms ease-in-out;
+  transition: transform 200ms ease-in-out;
 }
 
 #toggle:checked::before {
@@ -86,16 +88,17 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 32px;
+  max-width: 400px;
 }
 
 /* ------------------------- style the default card ------------------------- */
 .card {
   background-color: white;
-  /* padding: 30px; */
   border-radius: 10px;
   text-align: center;
   box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5);
   color: var(--grayish-blue);
+  min-width: 327px;
 }
 
 h1 {
@@ -191,4 +194,38 @@ h1 {
 }
 .attribution a {
   color: var(--gradient-end);
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    max-width: 1050px;
+  }
+
+  .card {
+    height: max-content;
+    min-width: 350px;
+  }
+
+  .card:nth-of-type(1) {
+    border-bottom-right-radius: unset;
+    border-top-right-radius: unset;
+  }
+
+  .card:nth-of-type(2) .inner-wrapper {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .card:nth-of-type(3) {
+    border-bottom-left-radius: unset;
+    border-top-left-radius: unset;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 8px;
+  }
 }
