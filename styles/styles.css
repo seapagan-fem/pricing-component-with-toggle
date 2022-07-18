@@ -51,7 +51,7 @@ body {
   opacity: 0.5;
 }
 
-#toggle {
+.toggle {
   appearance: none;
   position: relative;
   background: linear-gradient(
@@ -67,11 +67,11 @@ body {
   cursor: pointer;
 }
 
-#toggle:hover {
+.toggle:hover {
   background: var(--gradient-start);
 }
 
-#toggle::before {
+.toggle::before {
   content: "";
   position: absolute;
   top: 4px;
@@ -83,7 +83,7 @@ body {
   transition: transform 200ms ease-in-out;
 }
 
-#toggle:checked::before {
+.toggle:checked::before {
   transform: translateX(-100%);
 }
 

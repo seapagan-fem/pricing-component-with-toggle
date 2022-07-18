@@ -1,6 +1,6 @@
 console.log("Javascript Loaded");
 
-const toggle = document.getElementById("toggle");
+const toggle = document.getElementById("toggle-price");
 const prices = document.querySelectorAll(".price");
 
 const handleToggle = () => {
