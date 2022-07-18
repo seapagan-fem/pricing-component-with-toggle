@@ -1,8 +1,7 @@
-const toggle = document.getElementById("toggle-price");
-const prices = document.querySelectorAll(".price");
-
 const handleToggle = () => {
-  prices.forEach((price) => price.classList.toggle("active"));
+  document
+    .querySelectorAll(".price")
+    .forEach((price) => price.classList.toggle("active"));
 };
 
-toggle.addEventListener("click", handleToggle);
+document.getElementById("toggle-price").addEventListener("click", handleToggle);
