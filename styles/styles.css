@@ -67,6 +67,10 @@ body {
   cursor: pointer;
 }
 
+#toggle:hover {
+  background: var(--gradient-start);
+}
+
 #toggle::before {
   content: "";
   position: absolute;
@@ -175,8 +179,8 @@ h1 {
   );
   color: white;
   margin: 32px 29px;
-  padding: 14px 82px;
-  border: none;
+  padding: 12px 80px;
+  border: 1px solid white;
   outline: none;
   border-radius: 6px;
   text-transform: uppercase;
@@ -185,6 +189,20 @@ h1 {
 .card:nth-of-type(2) .learn-more {
   background: white;
   color: var(--gradient-end);
+  border-color: unset;
+}
+
+.learn-more:hover {
+  background: none;
+  color: var(--gradient-start);
+  border: 1px solid var(--gradient-start);
+  cursor: pointer;
+}
+
+.card:nth-of-type(2) .learn-more:hover {
+  background: none;
+  border-color: white;
+  color: white;
 }
 
 /* ------------------------------- attribution ------------------------------ */
@@ -196,6 +214,9 @@ h1 {
   color: var(--gradient-end);
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                media queries                               */
+/* -------------------------------------------------------------------------- */
 @media screen and (min-width: 1000px) {
   main {
     grid-template-columns: repeat(3, 1fr);
@@ -206,7 +227,6 @@ h1 {
 
   .card {
     height: max-content;
-    min-width: 350px;
   }
 
   .card:nth-of-type(1) {
